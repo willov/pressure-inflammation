@@ -1,0 +1,64 @@
+########## NAME
+M2
+
+########## METADATA
+time_unit = m
+
+//Optimized cost: 8.19921063812647, with θ*: [3.67772292e+01 1.63719563e+01 6.10034918e-02 5.03722839e-054.70031035e+01 2.95301060e+02 6.99400528e-02]
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a-v1b
+d/dt(GRO) = v2a-v2b
+d/dt(IL_6) = v3a-v3b
+d/dt(IL_1RA) = v4a-v4b
+
+IL_1α(0) = 0
+GRO(0) = 0
+IL_6(0) = 0
+IL_1RA(0) = 0
+
+########## PARAMETERS
+k1a   =  36.87324094772941
+k1a_b =  15.713065253522235
+k1d   =  0.07260748913051139
+k2a   =  0.004678994155178396
+k2a_b =  0.004819733673433541
+k2d   =  0.19814180414907573
+k3a   =  0.005808883087701581
+k3a_b =  7.550475177720226
+k3d   =  128.61319797504564
+k4a   =  7.860177926908226
+k4a_2 =  23.51304538211788
+k4a_3 =  0.001022933412908071
+k4a_b =  25029.377362428488
+k4d   =  6.359610783478661
+
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = k1d*IL_1α
+
+v2a = k2a*IL_1α + k2a_b
+v2b = k2d*GRO
+
+v3a = k3a*IL_1α + k3a_b
+v3b = k3d*IL_6
+
+v4a = k4a*IL_1α + k4a_2*GRO + k4a_3*IL_6 + k4a_b
+v4b = k4d*IL_1RA
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+IL-1α = IL_1α
+GRO-alpha = GRO
+IL-6 = IL_6
+IL-1RA = IL_1RA

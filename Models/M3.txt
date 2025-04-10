@@ -1,0 +1,75 @@
+########## NAME
+M3
+
+########## METADATA
+time_unit = m
+
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a-v1b
+d/dt(TNF_α) = v5a - v5b
+d/dt(GRO) = v2a-v2b
+d/dt(IL_6) = v3a-v3b
+d/dt(IL_1RA) = v4a-v4b
+
+IL_1α(0) = 0
+TNF_α(0) = 0
+GRO(0) = 0
+IL_6(0) = 0
+IL_1RA(0) = 0
+
+########## PARAMETERS
+k1a   =  36.88315464212858
+k1a_b =  15.79960339152752
+k1d   =  0.07242811834994237
+k2a   =  15.043932254984401
+k2a_2 =  14.01695968237056
+k2a_b =  1.6464405713872952
+k2d   =  617.3573995186787
+k3a   =  0.024957244381679504
+k3a_2 =  0.0048916884097794
+k3a_b =  27.936956718538333
+k3d   =  492.88005282389486
+k4a   =  23.349436883144644
+k4a_2 =  1.7039037421207692
+k4a_3 =  0.026346140349095923
+k4a_b =  70947.4616090274
+k4d   =  18.00107571871366
+k5a   =  6.418092383781854e-05
+k5a_b =  5.7244052368696305
+k5d   =  7.604109588695874
+
+
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = k1d*IL_1α
+
+v2a = k2a*IL_1α + k2a_2*TNF_α + k2a_b
+v2b = k2d*GRO
+
+v3a = k3a*IL_1α + k3a_2*TNF_α + k3a_b
+v3b = k3d*IL_6
+
+v4a = k4a*IL_1α + k4a_2*GRO + k4a_3*IL_6 + k4a_b
+v4b = k4d*IL_1RA
+
+v5a = k5a*IL_1α + k5a_b
+v5b = k5d*TNF_α
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+IL-1α = IL_1α
+TNF-α = TNF_α
+GRO-alpha = GRO
+IL-6 = IL_6
+IL-1RA = IL_1RA

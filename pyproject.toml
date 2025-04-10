@@ -1,0 +1,22 @@
+[project]
+name = "pressure-inflammation"
+version = "1.0.0"
+description = "Code for the simulations in the manuscript titled 'Inflammatory upregulation in skin after oronasal mask application in a clinical context - A repeated measures design study'."
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "William Lövfors", email = "william.lovfors@liu.se" }]
+license = { text = "MIT" }
+dependencies = [
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "psutil>=7.0.0",
+    "psutils>=3.3.9",
+    "pyqt6>=6.8.1",
+    "scipy>=1.15.2",
+    "sund",
+    "tqdm>=4.67.1",
+]
+
+[tool.uv.sources]
+sund = { url = "https://isbgroup.eu/sund-toolbox/releases/sund-1.4.0.tar.gz" }

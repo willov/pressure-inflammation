@@ -1,0 +1,44 @@
+########## NAME
+M1
+
+########## METADATA
+time_unit = m
+
+//Optimized cost: 8.19921063812647, with θ*: [3.67772292e+01 1.63719563e+01 6.10034918e-02 5.03722839e-054.70031035e+01 2.95301060e+02 6.99400528e-02]
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a-v1b
+d/dt(IL_1RA) = v2a-v2b
+IL_1α(0) = 0
+IL_1RA(0) = 0
+
+########## PARAMETERS
+k1a = 3.67772292e+01
+k1a_b=1.63719563e+01
+k1b = 6.10034918e-02
+
+kdeg = 5.03722839e-05
+k2a = 4.70031035e+01
+k2a_b=2.95301060e+02
+k2b = 6.99400528e-02
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = k1b*IL_1α*(1+IL_1RA*kdeg)
+
+v2a = k2a*mask_application + k2a_b
+v2b = k2b*IL_1RA
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+IL-1α = IL_1α
+IL-1RA = IL_1RA

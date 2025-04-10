@@ -1,0 +1,99 @@
+########## NAME
+M5
+
+########## METADATA
+time_unit = m
+
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a-v1b
+d/dt(IL_1β) = v7a - v7b
+d/dt(TNF_α_mRNA) = v5a - v5b - v5t
+d/dt(TNF_α) = v5t - v6b
+d/dt(GRO) = v2a-v2b
+d/dt(IL_6) = v3a-v3b
+d/dt(IL_1RA) = v4a-v4b
+d/dt(IL_23_mRNA) = v8a - v8b - v8t
+d/dt(IL_23) = v8t - v9b
+
+IL_1α(0) = 0
+IL_1β(0) = 0
+TNF_α(0) = 0
+TNF_α_mRNA(0) = 0
+GRO(0) = 0
+IL_6(0) = 0
+IL_1RA(0) = 0
+IL_23_mRNA(0) = 0
+IL_23(0) = 0
+
+########## PARAMETERS
+k1a   = 37.908286377182876
+k1a_b = 13.309769509502983
+k1d   = 0.0645342161789254
+k2a   = 1.4466585652576025
+k2a_b = 0.1644217511650983
+k2d   = 0.048991321812539707
+k3a   = 0.0017783208950543088
+k3a_b = 0.0030618101746150194
+k3d   = 0.04651183992847424
+k4a   = 42.820472129288795
+k4a_b = 232.6967410291784
+k4d   = 0.05500698603431903
+k5a   = 0.016467925012839488
+k5a_b = 0.00039671240355986675
+k5d   = 5.807118693988274e-05
+k5t   = 0.03478071622192454
+k6d   = 3.1228466277306906e-05
+k7a   = 1.016550149624762
+k7a_b = 0.3913598477109221
+k7d   = 0.08876732972105494
+k8a   = 0.0371251142350667
+k8a_b = 0.00039052453804836737
+k8d   = 0.01354458571004196
+k8t   = 0.014043084426603498
+k9d   = 0.0004147547536719177
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = k1d*IL_1α
+
+v2a = k2a*mask_application   + k2a_b
+v2b = k2d*GRO
+
+v3a = k3a*mask_application  + k3a_b
+v3b = k3d*IL_6
+
+v4a = k4a*mask_application + k4a_b
+v4b = k4d*IL_1RA
+
+v5a = k5a*mask_application + k5a_b
+v5b = k5d*TNF_α_mRNA
+v5t = k5t*TNF_α_mRNA
+v6b = k6d*TNF_α
+
+v7a = k7a*mask_application + k7a_b
+v7b = k7d*IL_1β
+
+v8a = k8a*mask_application + k8a_b
+v8b = k8d*IL_23_mRNA
+v8t = k8t*IL_23_mRNA 
+v9b = k9d*IL_23
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+IL-1α = IL_1α
+IL-1β = IL_1β
+TNF-α = TNF_α
+GRO-alpha = GRO
+IL-6 = IL_6
+IL-1RA = IL_1RA
+IL-23 = IL_23

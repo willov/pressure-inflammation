@@ -1,0 +1,16 @@
+# Python files
+*.pyc
+.venv
+__pycache__
+
+# Project files (generated figures etc)
+.vscode
+Results_backup
+Archive
+Models/*.png
+Models/*.svg
+Plots*/
+Figures/*
+
+# draw.io files
+.$*.bkp

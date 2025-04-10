@@ -1,0 +1,190 @@
+########## NAME
+M6_8
+
+########## METADATA
+time_unit = m
+
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a - v1b
+d/dt(MIP_1α_mRNA) = v2a-v2b -v2t 
+d/dt(MIP_1α) = v2t - v2d
+d/dt(IL_27_mRNA) = v3a-v3b -v3t 
+d/dt(IL_27) = v3t - v3d
+d/dt(IFN_α2a_mRNA) = v5a-v5b -v5t 
+d/dt(IFN_α2a) = v5t - v5d
+d/dt(IL_1RA) = v4a-v4b
+d/dt(IL_1β) = v6a - v6b
+d/dt(IL_23_mRNA) = v7a - v7b - v7t
+d/dt(IL_23) = v7t - v7d
+d/dt(VEGF_A) = v8a - v8b
+d/dt(M_CSF) = v9a - v9b
+d/dt(IL_2Ra) = v10a - v10b
+d/dt(YKL_40) = v11a-v11b
+d/dt(IL_9) = v12a-v12b
+d/dt(CX3CL1) = v13a-v13b
+d/dt(IL_7_mRNA) = v14a-v14b -v14t 
+d/dt(IL_7) = v14t - v14d
+d/dt(G_CSF_mRNA) = v15a-v15b -v15t 
+d/dt(G_CSF) = v15t - v15d
+d/dt(IL_15_mRNA) = v16a-v16b -v16t 
+d/dt(IL_15) = v16t - v16d
+d/dt(IL_17E_IL_25_mRNA) = v17a-v17b -v17t 
+d/dt(IL_17E_IL_25) = v17t - v17d
+
+IL_1α(0) = 0
+MIP_1α_mRNA(0) = 0
+MIP_1α(0) = 0
+IL_17E_IL_25_mRNA(0) = 0
+IL_17E_IL_25(0) = 0
+IL_1β(0) = 0
+IFN_α2a_mRNA(0) = 0
+IFN_α2a(0) = 0
+IL_1RA(0) = 0
+IL_23_mRNA(0) = 0
+IL_23(0) = 0
+VEGF_A(0) = 0
+M_CSF(0) = 0
+IL_2Ra(0) = 0
+YKL_40(0) = 0
+IL_9(0) = 0
+CX3CL1(0) = 0
+IL_7_mRNA(0) = 0
+IL_7(0) = 0
+G_CSF_mRNA(0) = 0
+G_CSF(0) = 0
+IL_15_mRNA(0) = 0
+IL_15(0) = 0
+IL_27_mRNA(0) = 0
+IL_27(0) = 0
+
+
+########## PARAMETERS
+k1a    = 31.659684923585843
+k1a_b  = 12.070174048501363
+kd     = 0.06001632665814319
+k2a    = 381.4404216430131
+k2a_b  = 0.3300899349551424
+k2t    = 1.3717997367009007e-05
+kd_2   = 1.0357514361986796e-05
+k3a    = 973.796669807027
+k3a_b  = 22.351686213744905
+k3t    = 1.3928768456787383e-05
+k4a    = 46.30800952660209
+k4a_b  = 253.42225327240874
+k5a    = 9.10754117528593
+k5a_b  = 0.22256284659940787
+k5t    = 4.0473371151686496e-05
+k6a    = 0.7677749367948612
+k6a_b  = 0.24935793115574278
+k7a    = 86.47680496156079
+k7a_b  = 0.830708272903454
+k7t    = 1.0156434708674048e-05
+k8a    = 1.1480948843276215
+k8a_b  = 0.6000879151304538
+k9a    = 0.02970957915799175
+k9a_b  = 0.011455981216550446
+k10a   = 0.9283902033064554
+k10a_b = 0.10572637942088801
+k11a   = 364.6029326540215
+k11a_b = 243.14466032704024
+k12a   = 0.013535002869108696
+k12a_b = 0.0018204477987694885
+k13a   = 3.0844349484947946
+k13a_b = 3.1086815316366505
+k14a   = 13.350513786915974
+k14a_b = 1.0758273054577865
+k14t   = 1.0507333255328912e-05
+k15a   = 66.4981424042356
+k15a_b = 0.09174880750146239
+k15t   = 1.004707079787053e-05
+k16a   = 47.82199846711006
+k16a_b = 0.41264922497583323
+k16t   = 1.1460776457823544e-05
+k17a   = 61.201570610914764
+k17a_b = 0.33195415777816306
+k17t   = 1.0513524315104988e-05
+
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = kd*IL_1α
+v2a = k2a*mask_application + k2a_b
+v2b = kd_2*MIP_1α_mRNA
+v2t = k2t*MIP_1α_mRNA
+v2d = kd*MIP_1α
+v3a = k3a*mask_application + k3a_b
+v3b = kd_2*IL_27_mRNA
+v3t = k3t*IL_27_mRNA
+v3d = kd*IL_27
+v4a = k4a*mask_application + k4a_b
+v4b = kd*IL_1RA
+v5a = k5a*mask_application + k5a_b
+v5b = kd_2*IFN_α2a_mRNA
+v5t = k5t*IFN_α2a_mRNA
+v5d = kd*IFN_α2a
+v6a = k6a*mask_application + k6a_b
+v6b = kd*IL_1β
+v7a = k7a*mask_application + k7a_b
+v7b = kd_2*IL_23_mRNA
+v7t = k7t*IL_23_mRNA 
+v7d = kd*IL_23
+v8a = k8a*mask_application + k8a_b
+v8b = kd*VEGF_A
+v9a = k9a*mask_application + k9a_b
+v9b = kd*M_CSF
+v10a = k10a*mask_application + k10a_b
+v10b = kd*IL_2Ra
+v11a = k11a*mask_application + k11a_b
+v11b = kd*YKL_40
+v12a = k12a*mask_application + k12a_b
+v12b = kd*IL_9
+v13a = k13a*mask_application + k13a_b
+v13b = kd*CX3CL1
+v14a = k14a*mask_application + k14a_b
+v14b = kd_2*IL_7_mRNA
+v14t = k14t*IL_7_mRNA
+v14d = kd*IL_7
+v15a = k15a*mask_application + k15a_b
+v15b = kd_2*G_CSF_mRNA
+v15t = k15t*G_CSF_mRNA
+v15d = kd*G_CSF
+v16a = k16a*mask_application + k16a_b
+v16b = kd_2*IL_15_mRNA
+v16t = k16t*IL_15_mRNA
+v16d = kd*IL_15
+v17a = k17a*mask_application + k17a_b
+v17b = kd_2*IL_17E_IL_25_mRNA
+v17t = k17t*IL_17E_IL_25_mRNA
+v17d = kd*IL_17E_IL_25
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+VEGF-A = VEGF_A
+CSF1 = M_CSF
+CHI3L1 = YKL_40
+IL-2Ra = IL_2Ra
+IL-9 = IL_9
+CX3CL1 = CX3CL1
+IL-1RA = IL_1RA
+IL-1α = IL_1α
+IL-1β = IL_1β
+
+IL-7 = IL_7
+CSF3 = G_CSF
+IL-15 = IL_15
+IFN-α2a = IFN_α2a
+IL-27 = IL_27
+IL-25 = IL_17E_IL_25
+CCL3 = MIP_1α 
+IL-23 = IL_23
+

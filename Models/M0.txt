@@ -1,0 +1,33 @@
+########## NAME
+M0
+
+########## METADATA
+time_unit = m
+
+θ* = [37.08526494, 16.81541621,  0.07592882]
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a-v1b
+IL_1α(0) = 0
+
+########## PARAMETERS
+k1a = 37.08526494
+k1a_b=16.81541621
+k1b = 0.07592882
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = k1b*IL_1α
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+IL-1α = IL_1α

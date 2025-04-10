@@ -1,0 +1,244 @@
+########## NAME
+M5_2
+
+########## METADATA
+time_unit = m
+
+########## MACROS
+
+########## STATES
+d/dt(IL_1α) = v1a - v1b
+d/dt(IL_1β) = v7a - v7b
+d/dt(TNF_α_mRNA) = v5a - v5b - v5t
+d/dt(TNF_α) = v5t - v6b
+d/dt(GRO) = v2a-v2b
+d/dt(IL_6) = v3a-v3b
+d/dt(IL_1RA) = v4a-v4b
+d/dt(IL_23_mRNA) = v8a - v8b - v8t
+d/dt(IL_23) = v8t - v9b
+d/dt(VEGF_A) = v10a - v10b
+d/dt(M_CSF) = v11a - v11b
+d/dt(IL_2Ra) = v12a - v12b
+d/dt(YKL_40) = v13a-v13b
+d/dt(IL_9) = v14a-v14b
+d/dt(CX3CL1) = v15a-v15b
+d/dt(IL_7_mRNA) = v16a-v16b -v16t 
+d/dt(IL_7) = v16t - v16d
+d/dt(G_CSF_mRNA) = v17a-v17b -v17t 
+d/dt(G_CSF) = v17t - v17d
+d/dt(IL_15_mRNA) = v18a-v18b -v18t 
+d/dt(IL_15) = v18t - v18d
+d/dt(IFN_α2a_mRNA) = v19a-v19b -v19t 
+d/dt(IFN_α2a) = v19t - v19d
+d/dt(IL_27_mRNA) = v20a-v20b -v20t 
+d/dt(IL_27) = v20t - v20d
+
+d/dt(MIP_1α_mRNA) = v21a-v21b -v21t 
+d/dt(MIP_1α) = v21t - v21d
+
+d/dt(IL_17E_IL_25_mRNA) = v22a-v22b -v22t 
+d/dt(IL_17E_IL_25) = v22t - v22d
+
+IL_1α(0) = 0
+IL_1β(0) = 0
+TNF_α(0) = 0
+TNF_α_mRNA(0) = 0
+GRO(0) = 0
+IL_6(0) = 0
+IL_1RA(0) = 0
+IL_23_mRNA(0) = 0
+IL_23(0) = 0
+VEGF_A(0) = 0
+M_CSF(0) = 0
+IL_2Ra(0) = 0
+YKL_40(0) = 0
+IL_9(0) = 0
+CX3CL1(0) = 0
+IL_7_mRNA(0) = 0
+IL_7(0) = 0
+G_CSF_mRNA(0) = 0
+G_CSF(0) = 0
+IL_15_mRNA(0) = 0
+IL_15(0) = 0
+IFN_α2a_mRNA(0) = 0
+IFN_α2a(0) = 0
+IL_27_mRNA(0) = 0
+IL_27(0) = 0
+
+MIP_1α_mRNA(0) = 0
+MIP_1α(0) = 0
+
+IL_17E_IL_25_mRNA(0) = 0
+IL_17E_IL_25(0) = 0
+
+########## PARAMETERS
+k1a    = 37.908286377182876
+k1a_b  = 13.309769509502983
+k1d    = 0.0645342161789254
+k2a    = 1.4466585652576025
+k2a_b  = 0.1644217511650983
+k2d    = 0.048991321812539707
+k3a    = 0.0017783208950543088
+k3a_b  = 0.0030618101746150194
+k3d    = 0.04651183992847424
+k4a    = 42.820472129288795
+k4a_b  = 232.6967410291784
+k4d    = 0.05500698603431903
+k5a    = 0.016467925012839488
+k5a_b  = 0.00039671240355986675
+k5d    = 5.807118693988274e-05
+k5t    = 0.03478071622192454
+k6d    = 3.1228466277306906e-05
+k7a    = 1.016550149624762
+k7a_b  = 0.3913598477109221
+k7d    = 0.08876732972105494
+k8a    = 0.0371251142350667
+k8a_b  = 0.00039052453804836737
+k8d    = 0.01354458571004196
+k8t    = 0.014043084426603498
+k9d    = 0.0004147547536719177
+k10a   = 1.1860770879575904
+k10a_b = 0.6225493583996734
+k10d   = 0.061619575711081453
+k11a   = 0.034019369234456996
+k11a_b = 0.013310448166767627
+k11d   = 0.06858158516281192
+k12a   = 0.9707211765901018
+k12a_b = 0.10852404020564509
+k12d   = 0.0645329963608896
+k13a   = 551.37388882184
+k13a_b = 543.6556647410816
+k13d   = 0.12682223472446538
+k14a   = 0.014166235823720152
+k14a_b = 0.0020339164232299144
+k14d   = 0.0639339315085389
+k15a   = 2.3787553152488754
+k15a_b = 2.0261332564273573
+k15d   = 0.041482700204612366
+k16a   = 0.09547228484092302
+k16a_b = 0.004590926400358479
+k16d   = 1.3429609900436432e-05
+k16t   = 0.0005221343557780124
+k16d_2 = 0.008773304833805095
+k17a   = 0.09929782773688356
+k17a_b = 0.0006910047704849955
+k17d   = 0.007770529503148818
+k17t   = 0.0028466472869596755
+k17d_2 = 0.0055496410364918695
+k18a   = 6.814469057885978
+k18a_b = 0.21549853368582864
+k18d   = 0.013801988938225878
+k18t   = 3.486187876755709e-05
+k18d_2 = 0.00448309877694328
+k19a   = 0.2536257282334398
+k19a_b = 0.006016598308799323
+k19d   = 0.013118614500205553
+k19t   = 0.00044625855911170224
+k19d_2 = 0.0002455372238144969
+k20a   = 0.25523912662888215
+k20a_b = 0.008170931011785112
+k20d   = 2.1105864632237795e-05
+k20t   = 0.03408550959283886
+k20d_2 = 0.0006511870432372969
+k21a   = 0.15331144017126827
+k21a_b = 0.00020361213419420454
+k21d   = 0.0034162700832863586
+k21t   = 0.014432441697600263
+k21d_2 = 0.00021493832582125436
+k22a   = 0.1044731994943628
+k22a_b = 0.0006847971412453097
+k22d   = 0.001227449102739913
+k22t   = 0.00278292296974512
+k22d_2 = 0.004807681488955537
+
+
+########## VARIABLES
+v1a = k1a*mask_application + k1a_b
+v1b = k1d*IL_1α
+v2a = k2a*mask_application   + k2a_b
+v2b = k2d*GRO
+v3a = k3a*mask_application  + k3a_b
+v3b = k3d*IL_6
+v4a = k4a*mask_application + k4a_b
+v4b = k4d*IL_1RA
+v5a = k5a*mask_application + k5a_b
+v5b = k5d*TNF_α_mRNA
+v5t = k5t*TNF_α_mRNA
+v6b = k6d*TNF_α
+v7a = k7a*mask_application + k7a_b
+v7b = k7d*IL_1β
+v8a = k8a*mask_application + k8a_b
+v8b = k8d*IL_23_mRNA
+v8t = k8t*IL_23_mRNA 
+v9b = k9d*IL_23
+v10a = k10a*mask_application + k10a_b
+v10b = k10d*VEGF_A
+v11a = k11a*mask_application + k11a_b
+v11b = k11d*M_CSF
+v12a = k12a*mask_application + k12a_b
+v12b = k12d*IL_2Ra
+v13a = k13a*mask_application + k13a_b
+v13b = k13d*YKL_40
+v14a = k14a*mask_application + k14a_b
+v14b = k14d*IL_9
+v15a = k15a*mask_application + k15a_b
+v15b = k15d*CX3CL1
+v16a = k16a*mask_application + k16a_b
+v16b = k16d*IL_7_mRNA
+v16t = k16t*IL_7_mRNA
+v16d = k16d_2*IL_7
+v17a = k17a*mask_application + k17a_b
+v17b = k17d*G_CSF_mRNA
+v17t = k17t*G_CSF_mRNA
+v17d = k17d_2*G_CSF
+v18a = k18a*mask_application + k18a_b
+v18b = k18d*IL_15_mRNA
+v18t = k18t*IL_15_mRNA
+v18d = k18d_2*IL_15
+v19a = k19a*mask_application + k19a_b
+v19b = k19d*IFN_α2a_mRNA
+v19t = k19t*IFN_α2a_mRNA
+v19d = k19d_2*IFN_α2a
+v20a = k20a*mask_application + k20a_b
+v20b = k20d*IL_27_mRNA
+v20t = k20t*IL_27_mRNA
+v20d = k20d_2*IL_27
+v21a = k21a*mask_application + k21a_b
+v21b = k21d*MIP_1α_mRNA
+v21t = k21t*MIP_1α_mRNA
+v21d = k21d_2*MIP_1α
+v22a = k22a*mask_application + k22a_b
+v22b = k22d*IL_17E_IL_25_mRNA
+v22t = k22t*IL_17E_IL_25_mRNA
+v22d = k22d_2*IL_17E_IL_25
+
+########## FUNCTIONS
+
+########## EVENTS
+
+########## OUTPUTS
+
+########## INPUTS
+mask_application = mask_application @ 0
+
+########## FEATURES
+IL-1α = IL_1α
+IL-1β = IL_1β
+TNF-α = TNF_α
+GRO-alpha = GRO
+IL-6 = IL_6
+IL-1RA = IL_1RA
+IL-23 = IL_23
+VEGF-A = VEGF_A
+CSF1 = M_CSF
+IL-2Ra = IL_2Ra
+CHI3L1 = YKL_40
+IL-9 = IL_9
+CX3CL1 = CX3CL1
+IL-7 = IL_7
+CSF3 = G_CSF
+IL-15 = IL_15
+IFN-α2a = IFN_α2a
+IL-27 = IL_27
+CCL3 = MIP_1α 
+IL-25 = IL_17E_IL_25
